@@ -1,33 +1,63 @@
-import java.util.Scanner;
-public class Arme {
-    String nom;
-    int PA;
-    String Description;
+/**
+ * @author Gwenael
+ * @version 1.0
+ * @created 07-nov.-2020 10:56:37
+ */
 
-    public Arme(String nom, int pA, String Description) {
-        this.nom = nom;
-        this.Description = Description;
-        PA = pA;
-    }
-    Scanner saisieUtilisateur = new Scanner(System.in);
-    Arme Pistolet = new Arme("pistolet", 100, Description);
-    Arme Couteau = new Arme("couteau", 25, Description);
-    Arme Arc = new Arme("arc", 50, Description);
-    Arme Fusil = new Arme("fusil", 150, Description);
+public class Arme extends Item {
 
-    public void ChoixArme(){
-        System.out.println("Veuillez choisir une arme (pistolet, couteau, arc, fusil):");
-        String str = saisieUtilisateur.next();
-        if (str == "pistolet"){
-            Joel.PA = Joel.PA + Pistolet.PA;
-        }
-        if(str == "couteau"){
-            Joel.PA = Joel.PA + Couteau.PA;
-        }
-        if(str == "arc"){
-            Joel.PA = Joel.PA + Arc.PA;
-        }else{
-            Joel.PA = Joel.PA + Fusil.PA;
-        }
+/* ----------------------------- Class constants ---------------------------- */
+    public static final int MAX_PA = 100;
+    public static final int MIN_PA = 0;
+
+/* ---------------------------- Object constants ---------------------------- */
+    public final int pa;
+
+    /**
+     * Constuctor
+     * @param nom Weapon's Name
+     * @param Description Weapon's description
+     * @param pA Weapon's attack point
+     */
+    public Arme(String nom, String Description, int pA) {
+        super(nom, Description);
+        
+        if(Arme.MIN_PA <= pA && pA <= Arme.MAX_PA)
+            this.pa = pA;
     }
+
+/* ------------------------ Object inherited methods ------------------------ */
+	/**
+	 * (no-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString()
+	{
+		return "";
+	}
+
+	/**
+	 * (non-Javadoc)
+	 * @see java.lang.Object#equals()
+	 */
+	@Override
+	public boolean equals(Object obj)
+	{
+		boolean eval;
+		
+		if(this == obj)
+			eval = true;
+		else if(obj == null || obj instanceof Arme)
+			eval = false;
+		else
+		{
+			Arme weapon = (Arme)obj;
+            eval = this.nom.equals(weapon.nom) &&
+                this.description.equals(weapon.description) &&
+                this.pa == weapon.pa;
+		}
+		
+		return eval;
+	}
 }
