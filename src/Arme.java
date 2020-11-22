@@ -9,6 +9,15 @@ public class Arme {
         this.Description = Description;
         PA = pA;
     }
+    public String getNom() {
+        return nom;
+    }
+    public String getDescription() {
+        return Description;
+    }
+    public int getPA() {
+        return PA;
+    }
     public void ChoixArme(){
         // System.out.println("Veuillez choisir une arme (pistolet, couteau, arc, fusil):");
         // if (str == "pistolet"){

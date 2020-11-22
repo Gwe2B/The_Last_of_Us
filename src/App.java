@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class App {
     public static void main(String[] args) {
         Description introduction = new Description("À l'été 2033, les villes sont désormais abandonnées et la nature a repris ses droits. Infectés et bandits rôdent et les rares zones sécurisées sont sous le contrôle de l’armée ou des Lucioles. Joel est désormais âgé d’environ 50 ans et vit dans une zone militaire de la ville de Boston. Le colis en question n’est autre qu’Ellie, une orpheline de 14 ans. Le duo accepte à contre-cœur l'offre de la cheffe rebelle."); 
@@ -15,19 +13,19 @@ public class App {
         Survivant Joel = new Survivant("Joel", 200, 100, 10, "Un homme d'une cinquantaine d'année, au début de la pandémie il avait 30 ans, il a donc connu le monde avant le cordiceps. il a perdu sa fille au début de la pandémie.");
         Survivant Ellie = new Survivant("Ellie", 200, 50, 5, "Ellie est une jeune orpheline de 14 ans, elle n'a jamais connu le monde avant la pandémi. au file du temps elle s'endurcie et lie un lien avec joel qui seras comme son père adoptif");
        
-        Zombie Rodeur = new Zombie("Rodeur", 100, 50, "un rodeurs est un infécter de stade 1, tres désorienté, ne bouge pas a part en cas de bruit");
-        Zombie Coureur = new Zombie("Coureur", 110, 60, "un Coureur est un infécter de stade 2, peu désorienté, bouge constament avec un circuit précis, des le moindre bruit il court pour dévorer se qu'il passe");
-        Zombie Claqueur = new Zombie("Claqueur", 120, 70, "un Claqueur est un infécter de stade 3, la tête de l'infecter est completement détruite, il a une ouî sur developper. si il vous attrappe vous etes mort");
-        Zombie Colosse = new Zombie("Colosse", 130, 100, "un Colosse est un infécter de stade 4, tres désorienté, le colosse immence infecter, si il vous attrape vous serais en bouillie");
+        Zombie Rodeur = new Zombie("Rodeur", 100, 0, 50, "un rodeurs est un infécter de stade 1, tres désorienté, ne bouge pas a part en cas de bruit");
+        Zombie Coureur = new Zombie("Coureur", 110, 0, 60, "un Coureur est un infécter de stade 2, peu désorienté, bouge constament avec un circuit précis, des le moindre bruit il court pour dévorer se qu'il passe");
+        Zombie Claqueur = new Zombie("Claqueur", 120, 0, 70, "un Claqueur est un infécter de stade 3, la tête de l'infecter est completement détruite, il a une ouî sur developper. si il vous attrappe vous etes mort");
+        var Colosse = new Zombie("Colosse", 130, 0, 100, "un Colosse est un infécter de stade 4, tres désorienté, le colosse immence infecter, si il vous attrape vous serais en bouillie");
 
         Arme Pistolet = new Arme("pistolet", 100, "Description");
         Arme Couteau = new Arme("couteau", 25, "Description");
         Arme Arc = new Arme("arc", 50, "Description");
         Arme Fusil = new Arme("fusil", 150, "Description");
         
-        Combat Partie1 = new Combat(Description.PremierCombat, Personnage.Joel, Personnage.Ellie, Personnage.Rodeur);
-        Combat Partie2 = new Combat(Description.DeuxièmeCombat, Personnage.Joel, Personnage.Ellie, Personnage.Coureur);
-        Combat Partie3 = new Combat(Description.TroisièmeCombat, Personnage.Joel, Personnage.Ellie, Personnage.Claqueur);
-        Combat Partie4 = new Combat(Description.DernierCombat, Personnage.Joel, Personnage.Ellie, Personnage.Colosse);
+        Combat Partie1 = new Combat(PremierCombat, Joel, Ellie, Rodeur);
+        Combat Partie2 = new Combat(DeuxièmeCombat, Joel, Ellie, Coureur);
+        Combat Partie3 = new Combat(TroisièmeCombat, Joel, Ellie, Claqueur);
+        Combat Partie4 = new Combat(DernierCombat, Joel, Ellie, Colosse);
     }
 }

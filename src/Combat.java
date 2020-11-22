@@ -10,6 +10,18 @@ public class Combat {
         Ellie = ellie;
         this.zombiePersonnage = zombiePersonnage;
     }
+    public Description getDefCombat() {
+        return DefCombat;
+    }
+    public Personnage getEllie() {
+        return Ellie;
+    }
+    public Personnage getJoel() {
+        return Joel;
+    }
+    public Personnage getZombiePersonnage() {
+        return zombiePersonnage;
+    }
     
     // //public combat(Combat){
     //     if(Joel.PA > Zombie.PV){

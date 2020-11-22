@@ -12,5 +12,19 @@ public abstract class Personnage {
         PA = pA;
         Description = description;
     }
-
+    public String getNom() {
+        return nom;
+    }
+    public String getDescription() {
+        return Description;
+    }
+    public int getPA() {
+        return PA;
+    }
+    public int getPR() {
+        return PR;
+    }
+    public int getPV() {
+        return PV;
+    }
 }
