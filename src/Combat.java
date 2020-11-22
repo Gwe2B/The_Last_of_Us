@@ -1,3 +1,4 @@
+import java.io.*;
 public class Combat {
     Description DefCombat;
     Personnage personnageChoisie;
@@ -17,22 +18,32 @@ public class Combat {
     public Personnage getZombiePersonnage() {
         return zombiePersonnage;
     }
-    public void choixSurvivant(Survivant survivant){
+    public Survivant choixSurvivant(Survivant survivant) throws IOException {
+        System.out.println("Choigisez votre Survivant pour le combat (Joel ou Ellie)");
+        BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+        String chaine = in.readLine();
+        if (chaine == "Joel"){
+            survivant = Personnage.Joel;
+        }if(chaine == "Ellie"){
+            survivant = survivant.Ellie;
+        }else{
 
+        }
+        return survivant;
     }
     public void choixArme(Arme arme){
 
     }
     public void combat() {
         if(personnageChoisie.PA > zombiePersonnage.PV){
-            system.out.println("Vous avez gagnez le combat");
+            System.out.println("Vous avez gagnez le combat");
         }else{
             zombiePersonnage.PV = zombiePersonnage.PV - personnageChoisie.PA;
             if(personnageChoisie.PV < zombiePersonnage.PA){
-                system.out.println(Description.GameOver);
+                System.out.println(Description.GameOver);
             }else{
                 if(personnageChoisie.PA > zombiePersonnage.PV){
-                    system.out.println("Vous avez gagnez le combat");
+                    System.out.println("Vous avez gagnez le combat");
                 }
             }
         }

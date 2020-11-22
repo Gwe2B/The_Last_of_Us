@@ -16,7 +16,7 @@ public class App {
         Zombie Rodeur = new Zombie("Rodeur", 100, 0, 50, "un rodeurs est un infécter de stade 1, tres désorienté, ne bouge pas a part en cas de bruit");
         Zombie Coureur = new Zombie("Coureur", 110, 0, 60, "un Coureur est un infécter de stade 2, peu désorienté, bouge constament avec un circuit précis, des le moindre bruit il court pour dévorer se qu'il passe");
         Zombie Claqueur = new Zombie("Claqueur", 120, 0, 70, "un Claqueur est un infécter de stade 3, la tête de l'infecter est completement détruite, il a une ouî sur developper. si il vous attrappe vous etes mort");
-        var Colosse = new Zombie("Colosse", 130, 0, 100, "un Colosse est un infécter de stade 4, tres désorienté, le colosse immence infecter, si il vous attrape vous serais en bouillie");
+        Zombie Colosse = new Zombie("Colosse", 130, 0, 100, "un Colosse est un infécter de stade 4, tres désorienté, le colosse immence infecter, si il vous attrape vous serais en bouillie");
 
         Arme Pistolet = new Arme("pistolet", 100, "Description");
         Arme Couteau = new Arme("couteau", 25, "Description");
