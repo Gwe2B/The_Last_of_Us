@@ -23,9 +23,9 @@ public class App {
         Arme Arc = new Arme("arc", 50, "Description");
         Arme Fusil = new Arme("fusil", 150, "Description");
         
-        Combat Partie1 = new Combat(PremierCombat, Joel, Ellie, Rodeur);
-        Combat Partie2 = new Combat(DeuxièmeCombat, Joel, Ellie, Coureur);
-        Combat Partie3 = new Combat(TroisièmeCombat, Joel, Ellie, Claqueur);
-        Combat Partie4 = new Combat(DernierCombat, Joel, Ellie, Colosse);
+        Combat Partie1 = new Combat(PremierCombat, choixSurvivant(),Rodeur);
+        Combat Partie2 = new Combat(DeuxièmeCombat, choixSurvivant(), Coureur);
+        Combat Partie3 = new Combat(TroisièmeCombat, choixSurvivant(), Claqueur);
+        Combat Partie4 = new Combat(DernierCombat, choixSurvivant(), Colosse);
     }
 }
