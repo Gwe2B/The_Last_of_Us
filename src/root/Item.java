@@ -28,9 +28,7 @@ public abstract class Item {
 	 */
 	@Override
 	public String toString()
-	{
-		return "";
-	}
+	{ return "Undefined: " + this.nom + "\n" + this.description; }
 
 	/**
 	 * (non-Javadoc)
@@ -45,10 +43,10 @@ public abstract class Item {
 			eval = true;
 		else if(obj == null || obj instanceof Item)
 			eval = false;
-		else
-		{
+		else {
 			Item item = (Item)obj;
-			eval = this.nom.equals(item.nom) && this.description.equals(item.description);
+			eval = this.nom.equals(item.nom) &&
+				this.description.equals(item.description);
 		}
 		
 		return eval;

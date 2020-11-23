@@ -1,10 +1,18 @@
 import java.io.IOException;
-import java.util.Scanner;
 
 public class App {
     public static void main(String[] args)
     {
-        System.out.println("Hello World!!");
+        System.out.println("=== Program start ===");
+
+        Inventory hInventory = new Inventory();
+        hInventory.addItem(new Arme("Arme de merde",
+            "Une super arme de merde", 15));
+        hInventory.addItem(new HealingItem("Heal de merde", 2, "description"));
+
+        System.out.println(hInventory);
+
+        System.out.println("=== Program stop  ===");
     }
 
     /**

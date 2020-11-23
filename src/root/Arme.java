@@ -19,11 +19,14 @@ public class Arme extends Item {
      * @param Description Weapon's description
      * @param pA Weapon's attack point
      */
-    public Arme(String nom, String Description, int pA) {
+	public Arme(String nom, String Description, int pA) {
         super(nom, Description);
         
         if(Arme.MIN_PA <= pA && pA <= Arme.MAX_PA)
-            this.pa = pA;
+			this.pa = pA;
+		else
+			throw new IllegalArgumentException("The PA stats must be between " +
+				Arme.MIN_PA + " and " + Arme.MAX_PA);
     }
 
 /* ------------------------ Object inherited methods ------------------------ */
@@ -32,9 +35,9 @@ public class Arme extends Item {
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public String toString()
-	{
-		return "";
+	public String toString() {
+		return "Weapon: " + this.nom + " (" + this.pa + ")" + "\n" +
+			this.description;
 	}
 
 	/**
@@ -42,8 +45,7 @@ public class Arme extends Item {
 	 * @see java.lang.Object#equals()
 	 */
 	@Override
-	public boolean equals(Object obj)
-	{
+	public boolean equals(Object obj) {
 		boolean eval;
 		
 		if(this == obj)

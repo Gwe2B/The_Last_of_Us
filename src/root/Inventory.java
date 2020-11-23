@@ -22,8 +22,16 @@ class Inventory {
 	 * @see java.lang.Object#toString()
 	 */
     @Override
-    public String toString()
-    { return ""; }
+    public String toString() {
+        String result = "Inventory\n";
+        result += "-----------------------------\n";
+        
+        for(Item el : this.inventaire) {
+            result += el.toString() + "\n";
+        }
+
+        return result;
+    }
 
     /**
 	 * (no-Javadoc)
@@ -38,8 +46,7 @@ class Inventory {
 			eval = true;
 		else if(obj == null || obj instanceof Inventory)
 			eval = false;
-		else
-		{
+		else {
 			Inventory buff = (Inventory)obj;
 			eval = this.inventaire.equals(buff.inventaire);
 		}
@@ -75,8 +82,7 @@ class Inventory {
      * @param index The index of the item to remove
      * @return The removed item
      */
-    public Item removeItem(int index)
-    {
+    public Item removeItem(int index) {
         Item buff = this.inventaire.get(index);
         this.inventaire.remove(index);
         return buff;
