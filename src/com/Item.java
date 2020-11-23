@@ -1,9 +1,10 @@
+package com;
+
 /**
  * @author Gwenael
  * @version 1.0
  * @created 07-nov.-2020 10:56:37
  */
-
 public abstract class Item {
 
 /* ---------------------------- Object constants ---------------------------- */

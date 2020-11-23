@@ -5,7 +5,7 @@
 The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain main sources
-  - `src/root`: the folder to maintian the different classes
+  - `src/com`: the folder to content the different classes
 - `lib`: the folder to maintain dependencies
 
 ## Application Structure

@@ -1,12 +1,13 @@
+package com;
+
+import java.util.ArrayList;
+
 /**
  * @author Gwenael
  * @version 1.0
  * @created 07-nov.-2020 10:56:37
  */
-
-import java.util.ArrayList;
-
-class Inventory {
+public class Inventory {
 
 /* ---------------------------- Object Attributs ---------------------------- */
     private ArrayList<Item> inventaire = new ArrayList<Item>();
