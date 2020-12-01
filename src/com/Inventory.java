@@ -39,8 +39,7 @@ public class Inventory {
 	 * @see java.lang.Object#equals()
 	 */
     @Override
-    public boolean equals(Object obj)
-    {
+    public boolean equals(Object obj) {
         boolean eval;
 		
 		if(this == obj)
