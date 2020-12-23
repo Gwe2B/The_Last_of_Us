@@ -10,24 +10,12 @@
 hs_err_pid*
 
 ##############################
-## Eclipse
-##############################
-.settings/
-bin/
-tmp/
-.metadata
-.classpath
-.project
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.loadpath
-.factorypath
-
-##############################
 ## Visual Studio Code
 ##############################
 .vscode/
 .code-workspace
+
+##############################
+## Enterprise Architect
+##############################
+*.ldb

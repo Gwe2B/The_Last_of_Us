@@ -67,7 +67,7 @@ public class Inventory {
      * @return the inventory
      */
     public ArrayList<Item> getInventaire()
-    { return this.inventaire; }
+    { return (ArrayList<Item>)this.inventaire.clone(); }
 
     /**
      * Get an Item

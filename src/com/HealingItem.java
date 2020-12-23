@@ -12,7 +12,7 @@ public class HealingItem extends Item {
 	public static final int MAX_PV_RENDUE = 100;
 
 /* --------------------------- Instance attributes -------------------------- */
-	private final int pvRendue;
+	public final int soin;
 
 	/**
 	 * Constructor
@@ -23,7 +23,7 @@ public class HealingItem extends Item {
 		super(name, description);
 
 		if(pv >= HealingItem.MIN_PV_RENDUE && pv <= HealingItem.MAX_PV_RENDUE)
-			this.pvRendue = pv;
+			this.soin = pv;
 		else
 			throw new IllegalArgumentException("The amount of the pv " +
 				HealingItem.MIN_PV_RENDUE + " and " + HealingItem.MAX_PV_RENDUE);
@@ -36,7 +36,7 @@ public class HealingItem extends Item {
 	 */
 	@Override
 	public String toString() {
-		return "Healing Item: " + this.nom + " (" + this.pvRendue + ")\n" +
+		return "Healing Item: " + this.nom + " (" + this.soin + " PV)\n" +
 			this.description;
 	}
 }
