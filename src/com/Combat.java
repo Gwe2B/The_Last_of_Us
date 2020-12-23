@@ -1,14 +1,16 @@
+package com;
+
 public class Combat {
-    Description DefCombat;
+    GameDescription DefCombat;
     Personnage personnageChoisie;
     Personnage zombiePersonnage;
 
-    public Combat(Description defCombat, Personnage personnageChoisie, Personnage zombiePersonnage) {
+    public Combat(GameDescription defCombat, Personnage personnageChoisie, Personnage zombiePersonnage) {
         DefCombat = defCombat;
         this.personnageChoisie = personnageChoisie;
         this.zombiePersonnage = zombiePersonnage;
     }
-    public Description getDefCombat() {
+    public GameDescription getDefCombat() {
         return DefCombat;
     }
     public Personnage getPersonnageChoisie() {
@@ -23,7 +25,7 @@ public class Combat {
         }else{
             zombiePersonnage.PV = zombiePersonnage.PV - personnageChoisie.PA;
             if(personnageChoisie.PV < zombiePersonnage.PA){
-                System.out.println(App.GameOver);
+                System.out.println(GameDescription.gameOver);
             }else{
                 if(personnageChoisie.PA > zombiePersonnage.PV){
                     System.out.println("Vous avez gagnez le combat");

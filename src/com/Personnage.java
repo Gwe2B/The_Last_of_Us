@@ -1,3 +1,5 @@
+package com;
+
 public abstract class Personnage {
     String nom;
     int PV;
