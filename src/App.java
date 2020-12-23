@@ -1,5 +1,45 @@
+import java.io.*;
 public class App {
-    public static void main(String[] args) {
+    static Survivant Joel = new Survivant("Joel", 200, 100, 10, "Un homme d'une cinquantaine d'année, au début de la pandémie il avait 30 ans, il a donc connu le monde avant le cordiceps. il a perdu sa fille au début de la pandémie.");
+    static Survivant Ellie = new Survivant("Ellie", 200, 50, 5, "Ellie est une jeune orpheline de 14 ans, elle n'a jamais connu le monde avant la pandémi. au file du temps elle s'endurcie et lie un lien avec joel qui seras comme son père adoptif");
+    static Arme Pistolet = new Arme("pistolet", 100, "Description");
+    static Arme Couteau = new Arme("couteau", 25, "Description");
+    static Arme Arc = new Arme("arc", 50, "Description");
+    static Arme Fusil = new Arme("fusil", 150, "Description");
+    
+    public static Survivant choixSurvivant() throws IOException {
+        System.out.println("Choigissez votre Survivant pour le combat (Joel ou Ellie)");
+        BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+        String chaine = in.readLine();
+        Survivant survivant = null;
+        if (chaine == "Joel"){
+            survivant = App.Joel;
+        }else if(chaine == "Ellie"){
+            survivant = App.Ellie;
+        }else{
+            //mettre une erreur ecrite et renvoyer la methode
+        }
+        return survivant;
+    }
+    public static Arme choixArme() throws IOException {
+        System.out.println("Choigissez votre Arme pour votre survivant (Pistolet, Couteau, Arc, Fusil)");
+        BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+        String chaine = in.readLine();
+        Arme arme = null;
+        if (chaine == "Pistolet"){
+            arme = App.Pistolet;
+        }else if(chaine == "Couteau"){
+            arme = App.Couteau;
+        }else if(chaine == "Arc"){
+            arme = App.Arc;
+        }else if(chaine == "Fusil"){
+            arme = App.Fusil;
+        }else{
+            //mettre une erreur ecrite et renvoyer la methode
+        }
+        return arme;
+    }
+    public static void main(String[] args) throws IOException {
         Description introduction = new Description("À l'été 2033, les villes sont désormais abandonnées et la nature a repris ses droits. Infectés et bandits rôdent et les rares zones sécurisées sont sous le contrôle de l’armée ou des Lucioles. Joel est désormais âgé d’environ 50 ans et vit dans une zone militaire de la ville de Boston. Le colis en question n’est autre qu’Ellie, une orpheline de 14 ans. Le duo accepte à contre-cœur l'offre de la cheffe rebelle."); 
         Description PremierCombat = new Description("Après avoir traversé divers passages en surface et en souterrain, ils sont arrêtés dans leur fuite par des militaires, qui procèdent alors à un contrôle d'infectiosité. Lorsque le soldat scanne Ellie, elle se retourne et l'attaque sauvagement. Joel découvre alors que l'adolescente réagit positivement au test d'infection. Le test établit qu'elle est contaminée depuis trois semaines, alors que l’infection se propage normalement au sein d'un hôte en un laps de temps maximum de deux jours. Ellie est donc une porteuse saine, immunisée aux spores. et la un rodeur LE COMBAT COMMENCE");
         Description DeuxièmeCombat = new Description("Apres ce combat Joel et Ellie se rende au Capitol et la toute les lucioles sont morte et decide d'aller rendre visite a tommy le frere de joel car il fesait partie des luciole avant. Mais en route il tombe sur un coureur. LE COMBAT COMMENCE");
@@ -9,21 +49,14 @@ public class App {
         //Description choix1 = new Description("defScenario"); je me souviens pas pourquoi j'ai ajouter ces deux ligne
         //Description choix2 = new Description("defScenario");
         Description GameOver = new Description("Vous etes mort, C'est un Game over");
-
-        Survivant Joel = new Survivant("Joel", 200, 100, 10, "Un homme d'une cinquantaine d'année, au début de la pandémie il avait 30 ans, il a donc connu le monde avant le cordiceps. il a perdu sa fille au début de la pandémie.");
-        Survivant Ellie = new Survivant("Ellie", 200, 50, 5, "Ellie est une jeune orpheline de 14 ans, elle n'a jamais connu le monde avant la pandémi. au file du temps elle s'endurcie et lie un lien avec joel qui seras comme son père adoptif");
        
-        Zombie Rodeur = new Zombie("Rodeur", 100, 0, 50, "un rodeurs est un infécter de stade 1, tres désorienté, ne bouge pas a part en cas de bruit");
-        Zombie Coureur = new Zombie("Coureur", 110, 0, 60, "un Coureur est un infécter de stade 2, peu désorienté, bouge constament avec un circuit précis, des le moindre bruit il court pour dévorer se qu'il passe");
-        Zombie Claqueur = new Zombie("Claqueur", 120, 0, 70, "un Claqueur est un infécter de stade 3, la tête de l'infecter est completement détruite, il a une ouî sur developper. si il vous attrappe vous etes mort");
-        Zombie Colosse = new Zombie("Colosse", 130, 0, 100, "un Colosse est un infécter de stade 4, tres désorienté, le colosse immence infecter, si il vous attrape vous serais en bouillie");
-
-        Arme Pistolet = new Arme("pistolet", 100, "Description");
-        Arme Couteau = new Arme("couteau", 25, "Description");
-        Arme Arc = new Arme("arc", 50, "Description");
-        Arme Fusil = new Arme("fusil", 150, "Description");
+        Zombie Rodeur = new Zombie("Rodeur", 100, 50, "un rodeurs est un infécter de stade 1, tres désorienté, ne bouge pas a part en cas de bruit");
+        Zombie Coureur = new Zombie("Coureur", 110, 60, "un Coureur est un infécter de stade 2, peu désorienté, bouge constament avec un circuit précis, des le moindre bruit il court pour dévorer se qu'il passe");
+        Zombie Claqueur = new Zombie("Claqueur", 120, 70, "un Claqueur est un infécter de stade 3, la tête de l'infecter est completement détruite, il a une ouî sur developper. si il vous attrappe vous etes mort");
+        Zombie Colosse = new Zombie("Colosse", 130, 100, "un Colosse est un infécter de stade 4, tres désorienté, le colosse immence infecter, si il vous attrape vous serais en bouillie");
+    
         
-        Combat Partie1 = new Combat(PremierCombat, choixSurvivant(),Rodeur);
+        Combat Partie1 = new Combat(PremierCombat, choixSurvivant(), Rodeur);
         Combat Partie2 = new Combat(DeuxièmeCombat, choixSurvivant(), Coureur);
         Combat Partie3 = new Combat(TroisièmeCombat, choixSurvivant(), Claqueur);
         Combat Partie4 = new Combat(DernierCombat, choixSurvivant(), Colosse);
