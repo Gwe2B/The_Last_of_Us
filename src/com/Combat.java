@@ -1,5 +1,9 @@
 package com;
 
+/**
+ * @author Marion
+ * @version 1.0
+ */
 public class Combat {
     GameDescription DefCombat;
     Personnage personnageChoisie;

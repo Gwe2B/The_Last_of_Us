@@ -1,5 +1,9 @@
 package com;
 
+/**
+ * @author Marion
+ * @version 1.0
+ */
 public abstract class Personnage {
     protected String nom;
     protected int PV;

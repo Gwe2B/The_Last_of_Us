@@ -1,5 +1,9 @@
 package com;
 
+/**
+ * @author Gwenael
+ * @version 1.0
+ */
 public class Survivant extends Personnage {
     private Arme mArme;
 
