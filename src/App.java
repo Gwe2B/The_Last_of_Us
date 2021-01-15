@@ -21,43 +21,81 @@ public class App {
         int choix = -1;
 
         try { choix = sc.nextInt(); }
-        catch(InputMismatchException e) { System.out.println(e.getMessage()); }
+        catch(InputMismatchException e) {
+            System.out.println(e.getMessage());
+            sc.nextLine();
+        }
 
         do {
             try {
-                if(choix == 0) {
-                    survivant = App.Joel;
-                } else if(choix == 1) {
-                    survivant = App.Ellie;
-                } else {
-                    System.out.print("Choix Erronée!\nVotre choix? ");
-                    choix = sc.nextInt();
+                switch(choix) {
+                    case 0:
+                        survivant = App.Joel;
+                        break;
+
+                    case 1:
+                        survivant = App.Ellie;
+                        break;
+
+                    default:
+                        System.out.print("Choix Erronée!\nVotre choix? ");
+                        choix = sc.nextInt();
+                        break;
                 }
             } catch(InputMismatchException e) {
                 System.out.println("Erreur:" + e.getMessage());
                 sc.nextLine();
             }
         } while(survivant == null);
-        //FIXME: Problème d'affichage (peu important)
 
         return survivant;
     }
     public static Arme choixArme() throws IOException {
-        System.out.println("Choigissez votre Arme pour votre survivant (Pistolet, Couteau, Arc, Fusil)");
-        BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
-        String chaine = in.readLine();
+        System.out.println("Choisissez votre Arme:")
+        System.out.println("[0] - Pistolet\n[1] - Couteau\n" +
+            "[2] - Arc\n[3] - Fusil\n");
+        System.out.print("Votre choix? ");
+
+        Scanner sc = new Scanner(System.in);
         Arme arme = null;
-        if (chaine == "Pistolet"){
-            arme = App.Pistolet;
-        }else if(chaine == "Couteau"){
-            arme = App.Couteau;
-        }else if(chaine == "Arc"){
-            arme = App.Arc;
-        }else if(chaine == "Fusil"){
-            arme = App.Fusil;
-        }else{
-            //mettre une erreur ecrite et renvoyer la methode
+        int choix = -1;
+
+        try { choix = sc.nextInt(); }
+        catch(InputMismatchException e) {
+            System.out.println(e.getMessage());
+            sc.nextLine();
         }
+        
+        do{
+            try {
+                switch(choix) {
+                    case 0:
+                        arme = App.Pistolet;
+                        break;
+                    
+                    case 1:
+                        arme = App.Couteau;
+                        break;
+
+                    case 2:
+                        arme = App.Arc;
+                        break;
+
+                    case 3:
+                        arme = App.Fusil;
+                        break;
+
+                    default:
+                        System.out.print("Choix Erronée!\nVotre choix? ");
+                            choix = sc.nextInt();
+                        break;
+                }
+            } catch(InputMismatchException e) {
+                System.out.println(e.getMessage());
+                sc.nextLine();
+            }
+        } while(arme == null);
+
         return arme;
     }
     public static void main(String[] args) throws IOException {
