@@ -32,7 +32,6 @@ public class App {
         Zombie Claqueur = new Zombie("Claqueur", 120, 70, "un Claqueur est un infécter de stade 3, la tête de l'infecter est completement détruite, il a une ouî sur developper. si il vous attrappe vous etes mort");
         Zombie Colosse = new Zombie("Colosse", 130, 100, "un Colosse est un infécter de stade 4, tres désorienté, le colosse immence infecter, si il vous attrape vous serais en bouillie");
     
-        
         Combat Partie1 = new Combat(GameDescription.firstCombat, choixSurvivant(), Rodeur);
         Combat Partie2 = new Combat(GameDescription.secondCombat, choixSurvivant(), Coureur);
         Combat Partie3 = new Combat(GameDescription.thirdCombat, choixSurvivant(), Claqueur);

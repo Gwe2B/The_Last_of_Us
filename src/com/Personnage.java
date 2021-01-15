@@ -68,5 +68,8 @@ public abstract class Personnage {
      * Hurt the personnage & give damage (decreasing the PV)
      * @param damage The amount of damage
      */
-    public void hurt(int damage) { this.PV -= damage; }
+    public void hurt(int damage) {
+        if(this.PR < damage)
+            this.PV -= damage;
+    }
 }

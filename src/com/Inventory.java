@@ -1,6 +1,6 @@
 package com;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * @author Gwenael
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Inventory {
 
 /* ---------------------------- Object Attributs ---------------------------- */
-    private ArrayList<Item> inventaire = new ArrayList<Item>();
+    private List<Item> inventaire = new ArrayList<Item>();
 
     /**
      * Constructor
@@ -66,8 +66,8 @@ public class Inventory {
      * Getter of inventaire
      * @return the inventory
      */
-    public ArrayList<Item> getInventaire()
-    { return (ArrayList<Item>)this.inventaire.clone(); }
+    public List<Item> getInventaire()
+    { return this.inventaire; }
 
     /**
      * Get an Item

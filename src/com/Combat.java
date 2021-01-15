@@ -14,8 +14,8 @@ public class Combat {
         this.personnageChoisie = personnageChoisie;
         this.zombiePersonnage = zombiePersonnage;
     }
-    public GameDescription getDefCombat() {
-        return DefCombat;
+    public String getDefCombat() {
+        return DefCombat.getDescription();
     }
     public Personnage getPersonnageChoisie() {
         return personnageChoisie;
@@ -36,5 +36,9 @@ public class Combat {
                 }
             }
         }
+    }
+
+    public String toString() {
+        return this.getDefCombat();
     }
 }
