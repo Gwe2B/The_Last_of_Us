@@ -24,18 +24,16 @@ public class Combat {
         return zombiePersonnage;
     }
     public void combat() {
-        if(personnageChoisie.PA > zombiePersonnage.PV){
-            System.out.println("Vous avez gagnez le combat");
-        }else{
-            zombiePersonnage.PV = zombiePersonnage.PV - personnageChoisie.PA;
-            if(personnageChoisie.PV < zombiePersonnage.PA){
-                System.out.println(GameDescription.gameOver);
-            }else{
-                if(personnageChoisie.PA > zombiePersonnage.PV){
-                    System.out.println("Vous avez gagnez le combat");
-                }
-            }
-        }
+        do {
+            zombiePersonnage.hurt(personnageChoisie.getPA());
+            
+            if(zombiePersonnage.getPV() > 0) {
+                personnageChoisie.hurt(zombiePersonnage.getPA());
+                if(personnageChoisie.getPV() < 0)
+                    System.out.println(GameDescription.gameOver);
+            } else
+                System.out.println("Vous avez Gagné");
+        } while(personnageChoisie.getPV() > 0 && zombiePersonnage.getPV() > 0);
     }
 
     public String toString() {
