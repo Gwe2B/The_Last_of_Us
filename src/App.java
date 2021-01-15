@@ -4,13 +4,20 @@ import java.util.*;
 import com.*;
 
 public class App {
-    static Survivant Joel;// = new Survivant("Joel", 200, 100, 10, "Un homme d'une cinquantaine d'année, au début de la pandémie il avait 30 ans, il a donc connu le monde avant le cordiceps. il a perdu sa fille au début de la pandémie.");
-    static Survivant Ellie;// = new Survivant("Ellie", 200, 50, 5, "Ellie est une jeune orpheline de 14 ans, elle n'a jamais connu le monde avant la pandémi. au file du temps elle s'endurcie et lie un lien avec joel qui seras comme son père adoptif");
-    static Arme Pistolet = new Arme("pistolet", "Description", 100);
-    static Arme Couteau = new Arme("couteau", "Description", 25);
-    static Arme Arc = new Arme("arc", "Description", 50);
-    static Arme Fusil = new Arme("fusil", "Description", 150);
 
+/* ---------------------------- Class Attributes ---------------------------- */
+    static Survivant Joel;
+    static Survivant Ellie;
+    static Arme Pistolet = new Arme("Pistolet", "Description", 100);
+    static Arme Couteau = new Arme("Couteau", "Description", 25);
+    static Arme Arc = new Arme("Arc", "Description", 50);
+    static Arme Fusil = new Arme("Fusil", "Description", 150);
+
+
+/* ------------------------------ Class methods ----------------------------- */
+    /**
+     * Initialisation
+     */
     public static void init() {
         Inventory buf = new Inventory();
         App.Joel = new Survivant("Joël", 200, 100, 10, buf, "Un homme d'une cinquantaine d'année, au début de la pandémie il avait 30 ans, il a donc connu le monde avant le cordiceps. il a perdu sa fille au début de la pandémie.");
@@ -25,10 +32,10 @@ public class App {
         init();
         Survivant choix;
 
-        Zombie Rodeur = new Zombie("Rodeur", 100, 50, "un rodeurs est un infécter de stade 1, tres désorienté, ne bouge pas a part en cas de bruit");
-        Zombie Coureur = new Zombie("Coureur", 110, 60, "un Coureur est un infécter de stade 2, peu désorienté, bouge constament avec un circuit précis, des le moindre bruit il court pour dévorer se qu'il passe");
-        Zombie Claqueur = new Zombie("Claqueur", 120, 70, "un Claqueur est un infécter de stade 3, la tête de l'infecter est completement détruite, il a une ouî sur developper. si il vous attrappe vous etes mort");
-        Zombie Colosse = new Zombie("Colosse", 130, 100, "un Colosse est un infécter de stade 4, tres désorienté, le colosse immence infecter, si il vous attrape vous serais en bouillie");
+        Zombie Rodeur = new Zombie("Rodeur", 100, 50, "Un rodeurs est un infécter de stade 1, tres désorienté, ne bouge pas a part en cas de bruit");
+        Zombie Coureur = new Zombie("Coureur", 110, 60, "Un Coureur est un infécter de stade 2, peu désorienté, bouge constament avec un circuit précis, des le moindre bruit il court pour dévorer se qu'il passe");
+        // Zombie Claqueur = new Zombie("Claqueur", 120, 70, "Un Claqueur est un infécter de stade 3, la tête de l'infecter est completement détruite, il a une ouî sur developper. si il vous attrappe vous etes mort");
+        // Zombie Colosse = new Zombie("Colosse", 130, 100, "Un Colosse est un infécter de stade 4, tres désorienté, le colosse immence infecter, si il vous attrape vous serais en bouillie");
     
         System.out.println("1er Combat!");
         choix = choixSurvivant();
@@ -53,6 +60,7 @@ public class App {
         // Combat Partie4 = new Combat(GameDescription.lastCombat, choixSurvivant(), Colosse);
     }
 
+/* ----------------------------- Inputs methods ----------------------------- */
     /**
      * Permit the user to select the character
      * @return the choisen character
@@ -150,6 +158,7 @@ public class App {
         return arme;
     }
 
+/* ------------------------- Specific Output methods ------------------------ */
     /**
      * Move the cursor to the coordinates (x, y)
      * @param x Line number (The first line is 0 on top)

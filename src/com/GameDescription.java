@@ -9,7 +9,19 @@ public enum GameDescription {
     lastPart("Ellie ne sachant pas nager et le tunnel étant inondé, cette dernière se noie. Joel tente alors de lui pratiquer un massage cardiaque lorsque des Lucioles l’accostent. Ce dernier les ignore, mais un des soldats le frappe avec son fusil et il s’évanouit sur le coup. Une fois réveillé, Joel se retrouve dans une salle de l’hôpital, et apprend par le biais de Marlene qu’Ellie est sur le point d’être opérée, afin de fabriquer le vaccin contre l’infection. Cependant, l’opération consiste à déloger le champignon mutant qui se trouve dans, le cerveau de la fille. Le dernier choix arrive aller vous sauver ellie ou la laiser mourir pour faire un vaccins qui ne pourras peut etre pas marcher"),
     gameOver("Vous etes mort, c'est un Game over");
 
+/* --------------------------- Instance Attribute --------------------------- */
     private String description;
+
+    /**
+     * Constructor
+     * @param description The description
+     */
     GameDescription(String description) { this.description = description; }
+
+/* -------------------------- Accessors & mutators -------------------------- */
+    /**
+     * Get the description
+     * @return The description
+     */
     public String getDescription() { return this.description; }
 }
