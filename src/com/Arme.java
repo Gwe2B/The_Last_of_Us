@@ -8,7 +8,7 @@ package com;
 public class Arme extends Item {
 
 /* ----------------------------- Class constants ---------------------------- */
-    public static final int MAX_PA = 100;
+    public static final int MAX_PA = 200;
     public static final int MIN_PA = 0;
 
 /* ---------------------------- Object constants ---------------------------- */

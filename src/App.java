@@ -1,4 +1,6 @@
 import java.io.*;
+import java.util.*;
+
 import com.*;
 
 public class App {
@@ -10,17 +12,34 @@ public class App {
     static Arme Fusil = new Arme("fusil", "Description", 150);
     
     public static Survivant choixSurvivant() throws IOException {
-        System.out.println("Choigissez votre Survivant pour le combat (Joel ou Ellie)");
-        BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
-        String chaine = in.readLine();
+        System.out.println("Choisissez votre Survivant pour le combat:\n" +
+            "[0] - Joel\n[1] - Ellie\n");
+        System.out.print("Votre choix? ");
+
+        Scanner sc = new Scanner(System.in);
         Survivant survivant = null;
-        if (chaine == "Joel"){
-            survivant = App.Joel;
-        }else if(chaine == "Ellie"){
-            survivant = App.Ellie;
-        }else{
-            //mettre une erreur ecrite et renvoyer la methode
-        }
+        int choix = -1;
+
+        try { choix = sc.nextInt(); }
+        catch(InputMismatchException e) { System.out.println(e.getMessage()); }
+
+        do {
+            try {
+                if(choix == 0) {
+                    survivant = App.Joel;
+                } else if(choix == 1) {
+                    survivant = App.Ellie;
+                } else {
+                    System.out.print("Choix Erronée!\nVotre choix? ");
+                    choix = sc.nextInt();
+                }
+            } catch(InputMismatchException e) {
+                System.out.println(e.getMessage());
+                sc.reset();
+            }
+        } while(survivant == null);
+        //FIXME: Si chaine de caractere saisi => boucle infinie
+
         return survivant;
     }
     public static Arme choixArme() throws IOException {
