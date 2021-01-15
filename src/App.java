@@ -19,7 +19,7 @@ public class App {
      * Initialisation
      */
     public static void init() {
-        Inventory buf = new Inventory();
+        Inventory buf = new Inventory(); // Inventaire partagée
         App.Joel = new Survivant("Joël", 200, 100, 10, buf, "Un homme d'une cinquantaine d'année, au début de la pandémie il avait 30 ans, il a donc connu le monde avant le cordiceps. il a perdu sa fille au début de la pandémie.");
         App.Ellie = new Survivant("Ellie", 200, 50, 5, buf, "Ellie est une jeune orpheline de 14 ans, elle n'a jamais connu le monde avant la pandémi. au file du temps elle s'endurcie et lie un lien avec joel qui seras comme son père adoptif");
     }
@@ -70,12 +70,13 @@ public class App {
             "[0] - Joel\n[1] - Ellie\n");
         System.out.print("Votre choix? ");
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);    //Création du lecteur d'entrée
         Survivant survivant = null;
         int choix = -1;
 
-        try { choix = sc.nextInt(); }
+        try { choix = sc.nextInt(); } //Tentative de premiere entrée
         catch(InputMismatchException e) {
+            //! Une chaine de caractere à été saisie
             System.out.println(e.getMessage());
             sc.nextLine();
         }
@@ -91,12 +92,13 @@ public class App {
                         survivant = App.Ellie;
                         break;
 
-                    default:
+                    default: // Saisie invalide
                         System.out.print("Choix Erronée!\nVotre choix? ");
-                        choix = sc.nextInt();
+                        choix = sc.nextInt(); // Nouvelle saisie
                         break;
                 }
             } catch(InputMismatchException e) {
+                //! Une chaine de caractere à ete saisie
                 System.out.println("Erreur:" + e.getMessage());
                 sc.nextLine();
             }
@@ -115,12 +117,13 @@ public class App {
             "[2] - Arc\n[3] - Fusil\n");
         System.out.print("Votre choix? ");
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // Création du lecteur d'entrée
         Arme arme = null;
         int choix = -1;
 
-        try { choix = sc.nextInt(); }
+        try { choix = sc.nextInt(); } // Premiere entrée
         catch(InputMismatchException e) {
+            //! Une chaine de caractere à ete saisie
             System.out.println(e.getMessage());
             sc.nextLine();
         }
@@ -144,12 +147,13 @@ public class App {
                         arme = App.Fusil;
                         break;
 
-                    default:
+                    default: // Entrée invalide
                         System.out.print("Choix Erronée!\nVotre choix? ");
-                            choix = sc.nextInt();
+                        choix = sc.nextInt(); // Nouvelle entrée
                         break;
                 }
             } catch(InputMismatchException e) {
+                //! Une chaine de caractere à ete saisie
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
@@ -174,6 +178,7 @@ public class App {
     {
         try
         {
+            //? Système Windows ou Linux?
             if(System.getProperty("os.name").contains("Windows"))
                 new ProcessBuilder("cmd", "/c", "cls")
                     .inheritIO().start().waitFor();
