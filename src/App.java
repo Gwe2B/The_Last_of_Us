@@ -34,11 +34,11 @@ public class App {
                     choix = sc.nextInt();
                 }
             } catch(InputMismatchException e) {
-                System.out.println(e.getMessage());
-                sc.reset();
+                System.out.println("Erreur:" + e.getMessage());
+                sc.nextLine();
             }
         } while(survivant == null);
-        //FIXME: Si chaine de caractere saisi => boucle infinie
+        //FIXME: Problème d'affichage (peu important)
 
         return survivant;
     }
