@@ -42,17 +42,19 @@ public class App {
         choix.setArme(choixArme());
 
         Combat Partie1 = new Combat(GameDescription.firstCombat, choix, Rodeur);
-        System.out.println(Partie1);
-        Partie1.combat();
-
+        
         clearScreen();
         gotoxy(0, 0);
+        System.out.println(Partie1);
+        Partie1.combat();
 
         System.out.println("2e Combat!");
         choix = choixSurvivant();
         choix.setArme(choixArme());
 
         Combat Partie2 = new Combat(GameDescription.secondCombat, choix, Coureur);
+        clearScreen();
+        gotoxy(0, 0);
         System.out.println(Partie2);
         Partie2.combat();
 
