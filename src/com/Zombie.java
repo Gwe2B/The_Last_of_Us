@@ -5,3 +5,4 @@ public class Zombie extends Personnage{
         super(nom, pV, 0, pA, description);// 0 remplace pr
     }
 }
+

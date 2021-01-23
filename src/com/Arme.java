@@ -35,6 +35,7 @@ public class Arme extends Item {
 	 * (no-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
+	
 	@Override
 	public String toString() {
 		return "Weapon: " + this.nom + " (" + this.pa + ")" + "\n" +
