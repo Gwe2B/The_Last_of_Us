@@ -17,4 +17,4 @@ The workspace contains two folders by default, where:
 
 ## Stay to do
 
- - Make the UML documentation
+ - Make the UML documentationToto
